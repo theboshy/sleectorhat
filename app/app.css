@@ -1,0 +1,24 @@
+@import '~nativescript-theme-core/css/core.light.css';
+
+.action-bar {
+    background-color: White;
+}
+
+.actionBarLabel {
+    font-family: 'Nordica Plus', 'nordicaclassicltext';
+    font-size: 20;
+}
+
+.name {
+    color: white;
+    font-family: 'Nordica Plus', 'nordicaclassicltext';
+    font-weight: bold;
+    font-size: 30;
+}
+
+.locationCountry {
+    color: darkgray;
+    font-family: 'Nordica Plus', 'nordicaclassicltext';
+    font-size: 18;
+    text-transform: uppercase;
+}

@@ -1,0 +1,59 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<ActionBar class="action-bar">
+    <AbsoluteLayout >
+        <Label left="0" top="15" text="Sombrero Seleccionador" class="actionBarLabel"></Label>
+        <Button data-chaffle="en" left="270" text="{{buttonText}}" class="button rotation"
+                (tap)="shuffle()"></Button>
+
+    </AbsoluteLayout >
+</ActionBar>
+
+<GridLayout tkExampleTitle tkToggleNavButton>
+
+    <RadListView [items]="mjvers" marginRight="-2">
+
+        <ListViewGridLayout tkListViewLayout scrollDirection="Vertical"
+            itemHeight="200" spanCount="1">
+        </ListViewGridLayout>
+
+        <ng-template tkListItemTemplate let-item="item">
+
+            <GridLayout backgroundColor="White">
+
+                <GridLayout >
+
+                    <android>
+                        <div *ngIf="!item.customImage">
+                            <Image src="{{ item.imageSrc }}"
+                                stretch="aspectFill" height="180">
+                            </Image>
+                        </div>
+                        <div *ngIf="item.customImage">
+                            <Image [src]="item.customImage"
+                                stretch="aspectFill" height="180">
+                            </Image>
+                        </div>
+                    </android>
+
+                    <GridLayout verticalAlignment="bottom">
+
+                            <Image src="https://img.icons8.com/cotton/2x/name.png"  class="btn-img" (tap)="onTakePictureTap($event, item.id)" class="masbn" width="10%" height="100%" marginRight="10"></Image>
+
+                        <StackLayout paddingTop="8" paddingBottom="8"
+                            paddingLeft="16" paddingRight="16">
+                            <Label text="{{ item.name }}" class="name">
+                            </Label>
+                            <Label text="{{ selectRandomDay() }}"
+                                class="locationCountry">
+                            </Label>
+                         
+
+                        </StackLayout>
+                    </GridLayout>
+                </GridLayout>
+            </GridLayout>
+        </ng-template>
+
+    </RadListView>
+</GridLayout>
