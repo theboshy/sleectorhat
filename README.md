@@ -1,2 +1,2 @@
-# sleectorhat
+# selectorhat
 grifindor !
